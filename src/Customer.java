@@ -3,12 +3,12 @@ public class Customer {
     private double balance;
     private Cart cart;
 
-    public Customer(String name, double balance, Cart cart) {
+    public Customer(String name, double balance) {
         if (name == null || name.isEmpty() || balance < 0){
             throw new IllegalArgumentException("Invalid customer attributes");}
         this.name = name;
         this.balance = balance;
-        this.cart=cart;
+        this.cart=new Cart();
     }
     public void deductBalance(double amount){if (amount > balance) throw new IllegalArgumentException("Insufficient balance");
         balance -= amount;}

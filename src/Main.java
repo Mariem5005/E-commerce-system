@@ -14,8 +14,8 @@ public class Main {
         inventory.addStock(phone,10);
         milk.setExpiryDate(LocalDate.now().plusDays(5));
 
-        Cart cart = new Cart();
-        Customer customer = new Customer("Alice", 1000,cart);
+        Customer customer = new Customer("Alice", 1000);
+        Cart cart = customer.getCart();
 
         CartItem item1= new CartItem(milk);
         item1.setQuantity(9);
