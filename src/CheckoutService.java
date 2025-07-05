@@ -34,7 +34,7 @@ public class CheckoutService {
 
         // Update inventory
         for (CartItem item : cart.getItems()) {
-            inventoryService.updateStock(item.getProduct(), item.getQuantity());
+            inventoryService.removeStock(item.getProduct(), item.getQuantity());
         }
 
         // Ship items

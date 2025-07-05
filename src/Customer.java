@@ -1,12 +1,14 @@
 public class Customer {
-    String name;
-    double balance;
+    private String name;
+    private double balance;
+    private Cart cart;
 
-    public Customer(String name, double balance) {
+    public Customer(String name, double balance, Cart cart) {
         if (name == null || name.isEmpty() || balance < 0){
             throw new IllegalArgumentException("Invalid customer attributes");}
         this.name = name;
         this.balance = balance;
+        this.cart=cart;
     }
     public void deductBalance(double amount){if (amount > balance) throw new IllegalArgumentException("Insufficient balance");
         balance -= amount;}
@@ -23,5 +25,8 @@ public class Customer {
         if (name == null || name.isEmpty())
             throw new IllegalArgumentException("Name cannot be null or empty");
         this.name = name;
+    }
+    public Cart getCart() {
+        return cart;
     }
 }

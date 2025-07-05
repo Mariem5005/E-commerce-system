@@ -6,17 +6,17 @@ public class Main {
         InventoryService inventory = new InventoryService();
 
         //ExpirableProduct milk = new ExpirableProduct("Milk", 2.5, 10, LocalDate.now().plusDays(5));
-        ShippableProduct phone = new ShippableProduct("Phone", 500, 5, 0.4);
+        ShippableProduct phone = new ShippableProduct("Phone", 500, 0.4);
         ExpirableProduct milk = new ExpirableProduct();
         milk.setName("Milk");
         milk.setPrice(2.5);
-        milk.setQuantity(10);
+        inventory.addProduct(milk,10);
+        inventory.addStock(phone,10);
         milk.setExpiryDate(LocalDate.now().plusDays(5));
 
-
-        Customer customer = new Customer("Alice", 1000);
-
         Cart cart = new Cart();
+        Customer customer = new Customer("Alice", 1000,cart);
+
         CartItem item1= new CartItem(milk);
         item1.setQuantity(9);
         //cart.addItem(milk, 2);

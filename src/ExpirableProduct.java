@@ -4,11 +4,11 @@ public class ExpirableProduct extends Product implements Expirable {
     private LocalDate expiryDate;
 
     public ExpirableProduct() {
-        super("Unnamed", 0.01, 0);
+        super("Unnamed", 0.01);
         this.expiryDate = null;
     }
     public ExpirableProduct(String name, double price, int quantity, LocalDate expiryDate) {
-        super(name, price, quantity);
+        super(name, price);
         this.expiryDate = expiryDate;
     }
 

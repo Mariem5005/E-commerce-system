@@ -1,6 +1,6 @@
 public class CartItem {
-    Product product;
-    int quantity_needed;
+    private Product product;
+    private int quantity_needed;
     public CartItem(Product product, int quantity) {
         if (product == null || quantity <= 0){
             throw new IllegalArgumentException("Invalid cart item");}
